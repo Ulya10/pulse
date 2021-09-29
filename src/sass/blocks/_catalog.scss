@@ -1,0 +1,130 @@
+.catalog {
+    padding-bottom: 103px;
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin: 70px 0 0 0;
+        padding: 0;
+    }
+
+    &__tab {
+        text-transform: uppercase;
+        width: 220px;
+        height: 50px;
+        background-color: #fff;
+        border: solid 2px #d0d0d0;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        color: #6b6b6b;
+        line-height: 50px;
+        transform: skewX(-25deg);
+        margin-right: 10px;
+        cursor: pointer;
+        transition: 0.5s all;
+
+        &:hover {
+            box-shadow: 3px 3px 20px $red;
+        }
+
+        &:nth-child(3) {
+            margin-right: 0;
+        }
+
+        div {
+            transform: skewX(25deg);
+        }
+
+        &_active {
+            width: 220px;
+            height: 50px;
+            background-color: $red;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            color: #fff;
+            border: none;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__content {
+        margin-top: 59px;
+    }
+
+    &-item {
+        width: 300px;
+        min-height: 440px;
+        padding: 20px 20px 27px 20px;
+        border: solid 2px #e8e8e8;
+        text-align: center;
+
+        &__img {
+            max-width: 100%;
+            height: 200px;
+        }
+
+        &__title {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0d0d0d;
+        }
+
+        &__descr {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #0d0d0d;
+        }
+
+        &__link {
+            display: block;
+            margin-top: 17px;
+            font-size: 14px;
+            font-weight: 500;
+            color: $red;
+
+            &:hover {
+                color: $red;
+                cursor: pointer;
+            }
+        }
+
+        hr {
+            width: 260px;
+            border-bottom:none;
+            background-color: #e8e8e8;
+            margin: 19px 0 21px 0;
+        }
+
+        &__old-price {
+            line-height: 14px;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: left;
+            color: #555;
+            text-decoration: line-through;
+        }
+
+        &__new-price {
+            line-height: 20px;
+            margin-top: 9px;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: left;
+            color: #050505;
+        }
+
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
