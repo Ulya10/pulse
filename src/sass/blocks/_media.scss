@@ -52,6 +52,24 @@
         width: 100%;
     }
 
+    .catalog-item{
+        width: 280px;
+        margin-right: 2px;
+    }
+
+    .catalog__tabs{
+        margin-top: 20px;
+    }
+
+    .catalog__tab{
+        margin-bottom: 10px;
+    }
+
+    .catalog__content{
+        justify-content: center;
+        margin-top: 10px;
+    }
+
 
 }
 
@@ -114,4 +132,15 @@
             margin-bottom: 30px;
         }
     }
+
+    .consultation {
+        min-height: 450px;
+        padding: 50px 0 0 0;
+    }
+
+    .catalog__tabs{
+        flex-wrap: wrap;
+    }
+
+
 }
