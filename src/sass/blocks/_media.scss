@@ -3,14 +3,14 @@
         max-width: 750px;
     }
 
-    .prev{
+    .prev {
         left: -10px;
     }
 
-    .next{
+    .next {
         right: -10px;
     }
-    
+
 }
 
 @media (max-width: 768px) {
@@ -28,46 +28,52 @@
 
     .title {
         font-size: 17px;
-    &_big{
-        width: 100%;
-        text-align: center;
-    }
+
+        &_big {
+            width: 100%;
+            text-align: center;
+        }
     }
 
-    .consultation__descr{
+    .consultation__descr {
         margin-top: 10px;
         text-align: center;
         font-size: 14px;
     }
 
-    .feed-form{
+    .feed-form {
         margin: 10px auto 0 auto;
     }
 
-    .prev, .next{
+    .prev,
+    .next {
         display: none;
     }
 
-    .carousel__inner img{
+    .carousel__inner img {
         width: 100%;
     }
 
-    .catalog-item{
+    .catalog-item {
         width: 280px;
         margin-right: 2px;
     }
 
-    .catalog__tabs{
+    .catalog__tabs {
         margin-top: 20px;
     }
 
-    .catalog__tab{
+    .catalog__tab {
         margin-bottom: 10px;
     }
 
-    .catalog__content{
+    .catalog__content {
         justify-content: center;
         margin-top: 10px;
+    }
+
+    .feedback hr {
+        margin: 25px 0 25px 0;
     }
 
 
@@ -77,58 +83,72 @@
 
     .header {
         flex-direction: column;
+
         &__official_s-hidden {
             display: none;
         }
-        &__connect{
+
+        &__connect {
             margin-top: 10px;
             text-align: center;
         }
-        &__phone{
+
+        &__phone {
             font-size: 15px;
             display: inline;
         }
     }
 
-    .promo{
+    .promo {
         padding: 10px 0 10px 0;
         min-height: 500px;
-        &__wrapper{
+
+        &__wrapper {
             margin-top: 45px;
         }
-        &__title{
+
+        &__title {
             font-size: 24px;
         }
-        &__subtitle{
+
+        &__subtitle {
             font-size: 14px;
             margin-top: 5px;
         }
-        &__icons{
+
+        &__icons {
             width: 300px;
             margin-top: 40px;
         }
-        &__text{
+
+        &__text {
             font-size: 10px;
         }
-        &__link{
+
+        &__link {
             font-size: 13px;
         }
     }
 
-    .benefits{
+    .benefits {
         padding: 20px 0;
-        &__header{
+
+        &__header {
             font-size: 20px;
         }
-        &__wrapper{
+
+        &__wrapper {
             flex-direction: column;
             margin-top: 30px;
             align-items: center;
         }
-        &__title, &__descr{
+
+        &__title,
+        &__descr {
             margin-top: 10px;
         }
-        &__descr{
+
+        &__descr {
             margin-bottom: 30px;
         }
     }
@@ -138,9 +158,105 @@
         padding: 50px 0 0 0;
     }
 
-    .catalog__tabs{
+    .catalog__tabs {
         flex-wrap: wrap;
     }
 
+    .feedback__wrapper {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .feedback__block {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .feedback__img {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .feedback__name {
+        margin-top: 10px;
+    }
+
+    .feedback__descr {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .footer {
+        min-height: 300px;
+        overflow: hidden;
+
+        iframe {
+            height: 300px;
+        }
+
+        &__info {
+            width: 100%;
+            height: auto;
+            padding: 10px 0 10px 0;
+            font-size: 14px;
+        }
+
+        &__tel,
+        &__social {
+            margin-top: 10px;
+        }
+
+        &__social-item {
+            width: 25px;
+            height: 25px;
+
+            img {
+                height: 10px;
+            }
+
+            &:nth-child(2) {
+                margin: 0 10px 0 10px;
+            }
+        }
+
+
+
+
+
+
+    }
+
+    .modal {
+        width: 270px;
+        min-height: 350px;
+        padding: 20px 5px 10px 5px;
+
+        &__title {
+            font-size: 15px;
+        }
+
+        &__subtitle {
+            font-size: 12px;
+        }
+
+        &__close {
+            right: -25px;
+        }
+    }
+
+    .feed-form_modal {
+        width: 200px;
+
+        input {
+            font-size: 12px;
+        }
+    }
+
+    .button_submit_xs{
+        font-size: 13px;
+    }
 
 }
