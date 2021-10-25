@@ -91,28 +91,95 @@ $(document).ready(function () {
     });
   });
 
-  $('#consultation-form').validate();
-  $('#order form').validate();
-  $('#consultation form').validate({
-    rules: {
-      // simple rule, converted to {required:true}
-      name: "required",
-      phone: "required",
-      // compound rule
-      email: {
-        required: true,
-        email: true
-      }
-    },
 
-    messages: {
-      name: "Ну и где имя?",
-      phone: "Ну и где телефон?",
-      email: {
-        required: "И где почта?",
-        email: "Это фигня, почта должна быть как name@domain.com"
+  function valideForm(form) {
+    $(form).validate({
+      rules: {
+        // simple rule, converted to {required:true}
+        name: {
+          required: true,
+          minlength: 2
+        },
+        phone: "required",
+        // compound rule
+        email: {
+          required: true,
+          email: true
+        }
+      },
+
+      messages: {
+        name: {
+          required: "Ну и где имя?",
+          minlength: jQuery.validator.format("Тут нужно хотя бы {0} символа!")
+        },
+        phone: "Ну и где телефон?",
+        email: {
+          required: "И где почта?",
+          email: "Это фигня, почта должна быть как name@domain.com"
+        }
       }
+    });
+  }
+
+  valideForm('#consultation form');
+  valideForm('#order form');
+  valideForm('#consultation-form');
+
+
+  $("input[name=phone]").mask("+7 (999) 999-99-99");
+
+
+  $('form').submit(function (evt) {
+    evt.preventDefault();
+
+    if (!$(this).valid()) {
+      return;
     }
+
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function () {
+      $(this).find("input").val("");
+      /* $('#consultation, #order').fadeOut();
+       $('.overlay, #thanks').fadeIn('slow');*/
+
+
+      $('form').trigger('reset');
+    });
+    return false;
+  });
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $('.up').fadeIn();
+    } else{
+      $('.up').fadeOut();
+    }
+  });
+
+  $("a[href^='#']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      const hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top+"px"
+      }, 5000, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
   });
 
 });
@@ -182,7 +249,7 @@ returns.forEach((item, i) => {
     evt.preventDefault();
     backs[i].classList.remove('catalog-item__back_active');
     forwards[i].classList.add('catalog-item__forward_active');
-    
+
   });
 });
 

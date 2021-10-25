@@ -33,4 +33,14 @@
         }
     }
 
+    &__img {
+        &_animated {
+            animation: Pulsation 1s linear 0s infinite normal;
+            // animation-name: Pulsation;
+            // animation-duration: 2s;
+            &:hover{
+                animation-play-state: paused;
+            }
+        }
+    }
 }
